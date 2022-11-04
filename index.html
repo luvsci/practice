@@ -66,8 +66,10 @@ form dl dd {
         <dd><input type="number" class="box" name="eyeheight" value="1"> m</dd>
         <dt>対象物までの距離：</dt>
         <dd><input type="number" class="box" name="distanceF" value="10"> km</dd>
-      
-        <p><input type="button" class="calc-btn" onclick="calc(eyeheight.value, distanceF.value);" value="計算"></p>
+
+
+
+        <p><input type="submit" class="calc-btn" onclick="calc(eyeheight.value, distanceF.value);" value="計算"></p>
 
 <hr>
 自動出力
@@ -103,39 +105,6 @@ form dl dd {
 
 
 <img src="https://luvsci.github.io/earth-curve/curve-calculation.png">
-
-
-
-	<script type="text/javascript">
-	    // var url = document.location.toString();
-		// var urlParmStr = url.slice(url.indexOf('?')+1);
-		var urlParmStr = document.location.search.slice(+1)
-		var arr = urlParmStr.split('&');
-	    // arr=decodeURI(arr)
-		console.log(arr[0])
-		for(let i=0;i<arr.length;i++){
-			let g=arr[i]
-			console.log(g)
-		}
-		// Get to input box
-		var	input=document.querySelector('#b2');
-		function f2(){
-			var str=document.getElementById("b1").value;
-			// console.log(str)
-			var val;
-			arr.forEach(function(item,i){
-				{
-					let g=item.split('=');
-					if(g[0]==str){
-						val=g[1];
-						// console.log(val)
-					}
-				}
-			})
-			val=decodeURI(val)
-			input.value=val;
-		}
-	</script>
 
 
 
