@@ -1,45 +1,145 @@
-<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-		<style>
-		*{margin: 0;padding: 0;list-style: none;}
-		.box{margin: 0 auto;margin-top: 20px; width: 240px; height: 280px; border: 1px solid #000000;}
-		.box h3{display: flex;justify-content: center;}
-		.box ul{line-height: 55px;display: flex;justify-content: center;}
-		.box p{display: flex;justify-content: center;}
-		.box input{width: 120px;}
-		</style>
-	</head>
-	<body>
-		<div class="box">
-			<form action="b.html" method="get">
-				<h3>Distribution of tourist attractions</h3>
-				<ul>
-					<li><h4>Name of scenic spot</h4></li>
-					<li><input name="name" type="text"/></li>
-				</ul>
-				<ul>
-					<li><h4>Ticket Price</h4></li>
-					<li><input name="price" type="text"/></li>
-				</ul>
-				<ul>
-					<li><h4>Scenic spot address</h4></li>
-					<li><input name="area" type="text"/></li>
-				</ul>
-				<ul>
-					<li style="margin-right: 15px;"><h4>country:</h4></li>
-					<select name="contry" style="width: 125px;height: 23px;margin-top: 16px;">
-						<option value="Thailand">Thailand</option>
-						<option value="Malaysia">Malaysia</option>
-						<option value="France">France</option>
-					</select>
-				</ul>
-				<p>
-					<button style="width: 115px;height: 25px;background-color: #CACAD9; border: none; "> submit < / button >
-				</p>
-			</form>
-		</div>
-	</body>
+<head>
+<title>地球の曲率計算機</title
+
+</head>
+<body bgcolor="#ffffff">
+
+<h1>地球の曲率計算 </h1>
+
+<p>
+このアプリは遠く離れた対象物が地球の曲面に沿って「何ｍ沈み込むか」を計算する。<BR>
+以下の2つが前提。<BR>
+  <BR>
+  1. 地球の半径は6371km<BR>
+  2. 光はまっすぐに進む<BR>
+<BR>
+ソースコードは<a href="https://github.com/luvsci/earth-curve">GitHub.com</a>で入手可
+
+<style>
+
+body {
+   margin: 30px;
+   padding: 20;
+}
+
+
+.curve_form {
+    background: #eaf4ff;
+    padding: 10px 30px;
+}
+form dl dt {
+    width: 200px;
+    height: 40px;
+    padding: 10px 0;
+    line-height: 40px;
+    float: left;
+}
+form dl dd {
+    padding: 10px 0;
+    margin: 0;
+}
+.box {
+    box-sizing: border-box;
+    width: 150px !important;
+    height: 40px !important;
+    margin: 0 !important;
+    padding: 0 10px !important;
+}
+.calc-btn {
+    width: 80px;
+    height: 30px;
+    border: 1px solid #333;
+}
+.calc-btn:hover {
+    cursor: pointer;
+}
+</style>
+
+
+<form class="curve_form" method="get">
+    <dl>
+    <hr>
+    データ入力
+    <hr>
+        <dt>観察者の高さ：</dt>
+        <dd><input type="number" class="box" name="eyeheight" value="1"> m</dd>
+        <dt>対象物までの距離：</dt>
+        <dd><input type="number" class="box" name="distanceF" value="10"> km</dd>
+      
+        <p><input type="button" class="calc-btn" onclick="calc(eyeheight.value, distanceF.value);" value="計算"></p>
+
+<hr>
+自動出力
+<hr>
+        <dt>水平線までの距離：</dt>
+        <dd><input id="horizonD" class="box" type="text" readonly=""> km</dd>
+
+        <dt>沈み込み：</dt>
+        <dd><input id="hiddenX" class="box" type="text" readonly=""> m</dd>
+
+        <dt></dt>
+        <dd><input id="radius" class="box" type="hidden" readonly=""></dd>
+        
+        <dt></dt>
+        
+        <dd><input id="horizonE" class="box" type="hidden" readonly=""></dd>
+
+    </dl>
+</form>
+
+
+<script>
+    function calc(eyeheight, distanceF)
+     {
+        const radius = document.getElementById('radius').value = 6371000;
+        var horizonD = document.getElementById('horizonD').value = Math.sqrt(eyeheight * eyeheight + 2 * radius * (eyeheight))/1000 ;
+        var horizonE = document.getElementById('horizonE').value = (distanceF - horizonD);
+        var hiddenX = document.getElementById('hiddenX').value = Math.sqrt(horizonE*1000 * horizonE*1000 + radius * radius) - radius ;
+
+      }
+</script>
+
+
+
+<img src="https://luvsci.github.io/earth-curve/curve-calculation.png">
+
+
+
+	<script type="text/javascript">
+	    // var url = document.location.toString();
+		// var urlParmStr = url.slice(url.indexOf('?')+1);
+		var urlParmStr = document.location.search.slice(+1)
+		var arr = urlParmStr.split('&');
+	    // arr=decodeURI(arr)
+		console.log(arr[0])
+		for(let i=0;i<arr.length;i++){
+			let g=arr[i]
+			console.log(g)
+		}
+		// Get to input box
+		var	input=document.querySelector('#b2');
+		function f2(){
+			var str=document.getElementById("b1").value;
+			// console.log(str)
+			var val;
+			arr.forEach(function(item,i){
+				{
+					let g=item.split('=');
+					if(g[0]==str){
+						val=g[1];
+						// console.log(val)
+					}
+				}
+			})
+			val=decodeURI(val)
+			input.value=val;
+		}
+	</script>
+
+
+
+
+
+</body>
 </html>
