@@ -13,13 +13,19 @@
   ＋
   <input type="number" name="b" value="0" size="5">
   ＝ <output name="op1">0</output>
+   <input type="submit" onclick="paraplus();">
 </form>
 
+
   
-    <script type="text/javascript">
+  
+    <script>
+    function paraplus()
+      {
       var paramstr = document.location.search;
       document.location.href = "https://luvsci.github.io/practice/index.html"+paramstr;
-    </script>
+      }
+  </script>
   
   
 </body>
