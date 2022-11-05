@@ -1,17 +1,17 @@
-<html><body><head><title>地球の曲率計算機</title></head>11
+<html><body><head><title>地球の曲率計算機</title></head>12
  <form method=get action="https://luvsci.github.io/practice/index.html">
         観察者の高さ： <input type="number" name="eyeheight" value=""> m
      　 対象物までの距離： <input type="number" name="distanceF" value=""> km
         地球の半径：<input type="number" name="radius" value="6371000"> m      
-       　 <input type="button" onclick="calc(eyeheight.value, distanceF.value)" value="計算"> <br>
+       　 <input type="button" onclick="calc(eyeheight.value, distanceF.value, radius.value)" value="計算"> <br>
         水平線までの距離：<input id="horizonD" type="text" readonly=""> km
         沈み込み：<input id="hiddenX" type="text" readonly=""> m
       　<input id="horizonE" type="text" readonly=""> km
 　　</form>  
 <script>    function calc(eyeheight, distanceF, radius)　{
-        let horizonD = document.getElementById('horizonD').value = Math.sqrt(eyeheight * eyeheight + 2 * radius * (eyeheight))/1000 ;
-        let horizonE = document.getElementById('horizonE').value = (distanceF - horizonD);
-        let hiddenX = document.getElementById('hiddenX').value = Math.sqrt(horizonE*1000 * horizonE*1000 + radius * radius) - radius ;
+            let horizonD = document.getElementById('horizonD').value = Math.sqrt(eyeheight * eyeheight + 2 * radius * (eyeheight))/1000 ;
+            let horizonE = document.getElementById('horizonE').value = (distanceF - horizonD);
+            let hiddenX = document.getElementById('hiddenX').value = Math.sqrt(horizonE*1000 * horizonE*1000 + radius * radius) - radius ;
 //         var paramstr = document.location.search;
 //         document.location.href = "https://luvsci.github.io/practice/index.html"+paramstr;
         console.log(eyeheight);
