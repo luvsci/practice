@@ -1,32 +1,50 @@
 <html>
-<head>
-<title>地球の曲率計算機</title
+  <body>
+ 
+ <form method=get action="">
+    <dl>
+    <hr>
+    データ入力
+    <hr>
+        <dt>観察者の高さ：</dt>
+        <dd><input type="number" class="box" name="eyeheight" value="1"> m</dd>
+        <dt>対象物までの距離：</dt>
+        <dd><input type="number" class="box" name="distanceF" value="10"> km</dd>
+      
+        <p><input type="button" class="calc-btn" onclick="calc(eyeheight.value, distanceF.value);" value="計算"></p>
 
-</head>
-<body bgcolor="#ffffff">
+<hr>
+自動出力
+<hr>
+        <dt>水平線までの距離：</dt>
+        <dd><input id="horizonD" class="box" type="text" readonly=""> km</dd>
 
-<h1>地球の曲率計算 </h1>
+        <dt>沈み込み：</dt>
+        <dd><input id="hiddenX" class="box" type="text" readonly=""> m</dd>
 
-  
-<form oninput="op1.value = Number(a.value) + Number(b.value);" action="https://luvsci.github.io/practice/index.html" method="get">
-  <input type="number" name="a" value="Number(a.value)" size="5">
-  ＋
-  <input type="number" name="b" value="Number(b.value)" size="5">
-  ＝ <output name="op1">0</output>
-   <input type="submit" onclick="paraplus();">
+        <dt></dt>
+        <dd><input id="radius" class="box" type="hidden" readonly=""></dd>
+        
+        <dt></dt>
+        
+        <dd><input id="horizonE" class="box" type="hidden" readonly=""></dd>
+
+    </dl>
 </form>
 
 
-  
-  
-    <script>
-    function paraplus()
-      {
-      var paramstr = document.location.search;
-      document.location.href = "https://luvsci.github.io/practice/index.html"+paramstr;
+<script>
+    function calc(eyeheight, distanceF)
+     {
+        var eyeheight = eyeheight
+        var distanceF = distanceF
+        const radius = document.getElementById('radius').value = 6371000;
+        var horizonD = document.getElementById('horizonD').value = Math.sqrt(eyeheight * eyeheight + 2 * radius * (eyeheight))/1000 ;
+        var horizonE = document.getElementById('horizonE').value = (distanceF - horizonD);
+        var hiddenX = document.getElementById('hiddenX').value = Math.sqrt(horizonE*1000 * horizonE*1000 + radius * radius) - radius ;
       }
-  </script>
-  
-  
-</body>
+      window.console.log(eyeheight)
+</script>
+ 
+  </body>
 </html>
