@@ -8,10 +8,18 @@
 <h1>FormのGetの練習 </h1>
 
 <form action="https://luvsci.github.io/practice" method="get">
- <input type="number" name="number1" />
- <input type="number" name="number2" />
- <input type="submit" value="submit" />
+ <input type="number" name="num1" />
+ <input type="number" name="num2" />
+ <input type="submit" value="計算" onclick=calc(num1,num2)/>
+ <input id="result" type="text" readonly="">
 </form>
+
+<script>
+ function calc(num1,num2)
+     {
+        var result=num1+num2;
+      }
+</script>
 
 </body>
 </html>
