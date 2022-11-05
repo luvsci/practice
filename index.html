@@ -1,5 +1,5 @@
 <html><body><head><title>地球の曲率計算機</title></head>
-５
+６
  <form method=get action="https://luvsci.github.io/practice/index.html">
         観察者の高さ：
      　   <input type="number" class="box" name="eyeheight" value=""> m
@@ -19,8 +19,8 @@
 <script>
     function calc(eyeheight, distanceF)
      {
-        var eyeheight.value = eyeheight
-        var distanceF.value = distanceF
+        var eyeheight.value = eyeheight;
+        var distanceF.value = distanceF;
         const radius = document.getElementById('radius').value = 6371000;
         var horizonD = document.getElementById('horizonD').value = Math.sqrt(eyeheight * eyeheight + 2 * radius * (eyeheight))/1000 ;
         var horizonE = document.getElementById('horizonE').value = (distanceF - horizonD);
