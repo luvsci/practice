@@ -8,31 +8,25 @@
     データ入力
     <hr>
         <dt>１観察者の高さ：</dt>
-        <dd><input type="number" class="box" name="eyeheight" value=""> m</dd>
-        <dt>対象物までの距離：</dt>
-        <dd><input type="number" class="box" name="distanceF" value=""> km</dd>
+     　   <dd><input type="number" class="box" name="eyeheight" value=""> m</dd>
+     　 <dt>対象物までの距離：</dt>
+     　   <dd><input type="number" class="box" name="distanceF" value=""> km</dd>
       
-        <p><input type="button" class="calc-btn" onclick="calc(eyeheight.value, distanceF.value);" value="計算"></p>
-    </dd>
-
-    </dl>
-</form>
+       　 <p><input type="button" class="calc-btn" onclick="calc(eyeheight.value, distanceF.value);" value="計算"></p>
+　　    </dl>
+　</form>
   
    <form>
-    <dl>
-
-<hr>自動出力<hr>
+   　<dl>
+　　　　<hr>自動出力<hr>
         <dt>水平線までの距離：</dt>
         <dd><input id="horizonD" class="box" type="text" readonly=""> km</dd>
         <dt>沈み込み：</dt>
         <dd><input id="hiddenX" class="box" type="text" readonly=""> m</dd>
-        <dt></dt>
         <dd><input id="radius" class="box" type="hidden" readonly=""></dd>
-        <dt></dt>
         <dd><input id="horizonE" class="box" type="hidden" readonly=""></dd>
-
-    </dl>
-</form>
+　    </dl>
+　　</form>
 
 
 <script>
