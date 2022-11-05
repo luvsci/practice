@@ -8,15 +8,17 @@
 <h1>FormのGetの練習 </h1>
 
 <form id="sampleForm">
- <input type='submit' value="送信">
+ <input type="text" id="textField" />
+ <input type="submit" value="submit" />
 </form>
-<script>
-const form = document.querySelector("#sampleForm");
-form.addEventListener("submit", function(){
- //処理
-})
-</script>
 
+<script>
+ var form = document.querySelector("#sampleForm");
+ form.addEventListener("submit", function(event) {
+  var input = document.querySelector("#textField");
+  alert(`文字数: ${input.value.length}`);
+ });
+</script>
 
 </body>
 </html>
