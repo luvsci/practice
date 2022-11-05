@@ -7,18 +7,20 @@
 
 <h1>FormのGetの練習 </h1>
 
-<form oninput="op1.value = Number(a.value) + Number(b.value);">
-  <input type="number" name="a" value="0" size="5">
-  ＋
-  <input type="number" name="b" value="0" size="5">
-  ＝ <output name="op1">0</output>
+  <form name="form1">
+<input type="text" name="input1">
+<input type="button" id="test1" value="実行">
 </form>
+<p id="test2">表示領域</p>
 
 <script>
- function calc(num1,num2)
-     {
-        var result=num1+num2;
-      }
+function func1() {
+  let y = document.form1.input1.value;
+  const z = document.querySelector("#test2");
+  z.textContent = y;
+}
+const x = document.querySelector("#test1");
+x.addEventListener("click",func1);
 </script>
 
 </body>
