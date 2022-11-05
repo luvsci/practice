@@ -1,30 +1,21 @@
-<html>
-  <body>
-    <head><title>地球の曲率計算機</title></head>
+<html><body><head><title>地球の曲率計算機</title></head>
  
  <form method=get action="https://luvsci.github.io/practice/index.html">
-    <dl>
-    <hr>
-    データ入力
-    <hr>
-        <dt>３観察者の高さ：</dt>
-     　   <dd><input type="number" class="box" name="eyeheight" value=""> m</dd>
-     　 <dt>対象物までの距離：</dt>
-     　   <dd><input type="number" class="box" name="distanceF" value=""> km</dd>
+        ３観察者の高さ：
+     　   <input type="number" class="box" name="eyeheight" value=""> m
+     　 対象物までの距離：
+     　   <input type="number" class="box" name="distanceF" value=""> km
       
-       　 <p><input type="button" class="calc-btn" onclick="calc(eyeheight.value, distanceF.value);" value="計算"></p>
+       　 <input type="button" class="calc-btn" onclick="calc(eyeheight.value, distanceF.value);" value="計算">
 
-　　　　<hr>自動出力<hr>
-        <dt>水平線までの距離：</dt>
-        <dd><input id="horizonD" class="box" type="text" readonly=""> km</dd>
-        <dt>沈み込み：</dt>
-        <dd><input id="hiddenX" class="box" type="text" readonly=""> m</dd>
-        <dd><input id="radius" class="box" type="hidden" readonly=""></dd>
-        <dd><input id="horizonE" class="box" type="hidden" readonly=""></dd>
-　    </dl>
+        水平線までの距離：
+        <input id="horizonD" class="box" type="text" readonly=""> km
+        沈み込み：
+        <input id="hiddenX" class="box" type="text" readonly=""> m
+        <input id="radius" class="box" type="hidden" readonly="">
+      　<input id="horizonE" class="box" type="hidden" readonly="">
 　　</form>
-
-
+  
 <script>
     function calc(eyeheight, distanceF)
      {
@@ -38,14 +29,11 @@
 //         document.location.href = "https://luvsci.github.io/practice/index.html"+paramstr;
         console.log(eyeheight);
         console.log(distanceF);
-               console.log(radius);
-               console.log(horizonD);
-               console.log(horizonE);
-       
-       
+        console.log(radius);
+        console.log(horizonD);
+        console.log(horizonE);
       }
 
-</script>       
-    
-  </body>
-</html>
+</script>
+
+</body></html>
