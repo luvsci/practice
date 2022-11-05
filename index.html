@@ -13,20 +13,14 @@
       
         <p><input type="button" class="calc-btn" onclick="calc(eyeheight.value, distanceF.value);" value="計算"></p>
 
-<hr>
-自動出力
-<hr>
+<hr>自動出力<hr>
         <dt>水平線までの距離：</dt>
         <dd><input id="horizonD" class="box" type="text" readonly=""> km</dd>
-
         <dt>沈み込み：</dt>
         <dd><input id="hiddenX" class="box" type="text" readonly=""> m</dd>
-
         <dt></dt>
         <dd><input id="radius" class="box" type="hidden" readonly=""></dd>
-        
         <dt></dt>
-        
         <dd><input id="horizonE" class="box" type="hidden" readonly=""></dd>
 
     </dl>
@@ -43,7 +37,7 @@
         var horizonE = document.getElementById('horizonE').value = (distanceF - horizonD);
         var hiddenX = document.getElementById('hiddenX').value = Math.sqrt(horizonE*1000 * horizonE*1000 + radius * radius) - radius ;
       }
-      window.console.log(eyeheight)
+//       window.console.log(eyeheight)
 
       var paramstr = document.location.search;
       document.location.href = "https://luvsci.github.io/practice/index.html"+paramstr;
