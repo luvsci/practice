@@ -7,20 +7,11 @@
 
 <h1>地球の曲率計算 </h1>
 
-<script>
-function func() {
-  var xx = parseFloat(document.F1.T1.value);
-  var yy = parseFloat(document.F1.T2.value);
-  document.F1.T3.value = xx + yy;
-}
-</script>
-  
-<form name="F1" action="luvsci.github.io/practice/index.html" method="get">
-<input type="text" name="T1">
-＋
-<input type="text" name="T2">
-<input type="button" value="＝" onclick="func()">
-<input type="text" name="T3">
+<form oninput="op1.value = Number(a.value) + Number(b.value);">
+  <input type="number" name="a" value="0" size="5">
+  ＋
+  <input type="number" name="b" value="0" size="5">
+  ＝ <output name="op1">0</output>
 </form>
 
 </body>
