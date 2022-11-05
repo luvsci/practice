@@ -1,5 +1,5 @@
 <html><body>
-<head><title>地球の曲率計算機</title></head>033
+<head><title>地球の曲率計算機</title></head>034
 <form>
         観察者の高さ： <input type="number" name="eyeheight" value="1"> m <br>
         対象物までの距離： <input type="number" name="distanceF" value="10"> km <br>
@@ -22,4 +22,11 @@ console.log(eyeheight); console.log(distanceF); console.log(radius); console.log
         沈み込み：<input id="hiddenX" type="text" value=""> m <br>
 </form>
 
+        
+<script type="text/javascript">
+        function paraAdd(eyeheight, distanceF, radius){
+var paramstr = document.location.search;
+document.location.href = "https://luvsci.github.io/practice/"+paramstr;}
+</script>
+        
 </body></html>
