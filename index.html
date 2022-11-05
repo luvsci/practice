@@ -31,8 +31,8 @@
 <script>
     function calc(eyeheight, distanceF)
      {
-        var eyeheight = eyeheight
-        var distanceF = distanceF
+        var eyeheight.value = eyeheight
+        var distanceF.value = distanceF
         const radius = document.getElementById('radius').value = 6371000;
         var horizonD = document.getElementById('horizonD').value = Math.sqrt(eyeheight * eyeheight + 2 * radius * (eyeheight))/1000 ;
         var horizonE = document.getElementById('horizonE').value = (distanceF - horizonD);
