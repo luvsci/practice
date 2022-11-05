@@ -7,11 +7,11 @@
 
 <h1>FormのGetの練習 </h1>
 
-<form action="https://luvsci.github.io/practice" method="get">
- <input type="number" name="num1" />
- <input type="number" name="num2" />
- <input type="submit" value="計算" onclick=calc(num1,num2)/>
- <input id="result" type="number" readonly="">
+<form oninput="op1.value = Number(a.value) + Number(b.value);">
+  <input type="number" name="a" value="0" size="5">
+  ＋
+  <input type="number" name="b" value="0" size="5">
+  ＝ <output name="op1">0</output>
 </form>
 
 <script>
