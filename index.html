@@ -9,7 +9,7 @@
         水平線～対象物までの距離<input id="horizonE" type="text" readonly=""> km <br>
 　　</form>  
 <script>    function calc(eyeheight, distanceF, radius)　{
-            let horizonD = document.getElementById('horizonD').value = Math.sqrt(eyeheight * eyeheight + 2 * radius * (eyeheight)) ;
+            let horizonD = document.getElementById('horizonD').value = Math.sqrt(eyeheight * eyeheight + 2 * (radius*1000) * (eyeheight)) ;
             let horizonE = document.getElementById('horizonE').value = (distanceF - horizonD);
             let hiddenX = document.getElementById('hiddenX').value = Math.sqrt(horizonE * horizonE + radius*1000 * radius*1000) - radius*1000 ;
 //         var paramstr = document.location.search;
