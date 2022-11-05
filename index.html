@@ -2,18 +2,18 @@
 8
  <form method=get action="https://luvsci.github.io/practice/index.html">
         観察者の高さ：
-     　   <input type="number" class="box" name="eyeheight" value=""> m
+     　   <input type="number" name="eyeheight" value=""> m
      　 対象物までの距離：
-     　   <input type="number" class="box" name="distanceF" value=""> km
+     　   <input type="number" name="distanceF" value=""> km
       
-       　 <input type="button" class="calc-btn" onclick="calc(eyeheight.value, distanceF.value)" value="計算">
+       　 <input type="button" onclick="calc(eyeheight.value, distanceF.value)" value="計算">
 
         水平線までの距離：
-        <input id="horizonD" class="box" type="text" readonly=""> km
+        <input id="horizonD" type="text" readonly=""> km
         沈み込み：
-        <input id="hiddenX" class="box" type="text" readonly=""> m
-        <input id="radius" class="box" type="hidden" readonly="">
-      　<input id="horizonE" class="box" type="hidden" readonly="">
+        <input id="hiddenX" type="text" readonly=""> m
+        <input id="radius" type="text" readonly=""> m
+      　<input id="horizonE" type="text" readonly=""> km
 　　</form>
   
 <script>
