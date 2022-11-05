@@ -7,101 +7,20 @@
 
 <h1>地球の曲率計算 </h1>
 
-<p>
-このアプリは遠く離れた対象物が地球の曲面に沿って「何ｍ沈み込むか」を計算する。<BR>
-以下の2つが前提。<BR>
-  <BR>
-  1. 地球の半径は6371km<BR>
-  2. 光はまっすぐに進む<BR>
-<BR>
-ソースコードは<a href="https://github.com/luvsci/earth-curve">GitHub.com</a>で入手可
-
-<style>
-
-body {
-   margin: 30px;
-   padding: 20;
-}
-
-
-.curve_form {
-    background: #eaf4ff;
-    padding: 10px 30px;
-}
-form dl dt {
-    width: 200px;
-    height: 40px;
-    padding: 10px 0;
-    line-height: 40px;
-    float: left;
-}
-form dl dd {
-    padding: 10px 0;
-    margin: 0;
-}
-.box {
-    box-sizing: border-box;
-    width: 150px !important;
-    height: 40px !important;
-    margin: 0 !important;
-    padding: 0 10px !important;
-}
-.calc-btn {
-    width: 80px;
-    height: 30px;
-    border: 1px solid #333;
-}
-.calc-btn:hover {
-    cursor: pointer;
-}
-</style>
-
-
-<form class="curve_form" action="https://luvsci.github.io/practice/index.html" method="get">
-    <dl>
-    <hr>
-    データ入力
-    <hr>
-        <dt>観察者の高さ：</dt>
-        <dd><input type="number" class="box" name="eyeheight" value="1"> m</dd>
-        <dt>対象物までの距離：</dt>
-        <dd><input type="number" class="box" name="distanceF" value="10"> km</dd>
-      
-        <p><input type="button" class="calc-btn" onclick="calc(eyeheight.value, distanceF.value);" value="計算"></p>
-
-<hr>
-自動出力
-<hr>
-        <dt>水平線までの距離：</dt>
-        <dd><input id="horizonD" class="box" type="text" readonly=""> km</dd>
-
-        <dt>沈み込み：</dt>
-        <dd><input id="hiddenX" class="box" type="text" readonly=""> m</dd>
-
-        <dt></dt>
-        <dd><input id="radius" class="box" type="hidden" readonly=""></dd>
-        
-        <dt></dt>
-        
-        <dd><input id="horizonE" class="box" type="hidden" readonly=""></dd>
-
-    </dl>
-</form>
-
-
 <script>
-    function calc(eyeheight, distanceF)
-     {
-        const radius = document.getElementById('radius').value = 6371000;
-        var horizonD = document.getElementById('horizonD').value = Math.sqrt(eyeheight * eyeheight + 2 * radius * (eyeheight))/1000 ;
-        var horizonE = document.getElementById('horizonE').value = (distanceF - horizonD);
-        var hiddenX = document.getElementById('hiddenX').value = Math.sqrt(horizonE*1000 * horizonE*1000 + radius * radius) - radius ;
-      }
+function func() {
+  var xx = parseFloat(document.F1.T1.value);
+  var yy = parseFloat(document.F1.T2.value);
+  document.F1.T3.value = xx + yy;
+}
 </script>
-
-
-
-<img src="https://luvsci.github.io/earth-curve/curve-calculation.png">
+<form name="F1" action="#">
+<input type="text" name="T1">
+＋
+<input type="text" name="T2">
+<input type="button" value="＝" onclick="func()">
+<input type="text" name="T3">
+</form>
 
 </body>
 </html>
