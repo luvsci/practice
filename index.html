@@ -57,7 +57,7 @@ form dl dd {
 </style>
 
 
-<form class="curve_form" action="" method="get">
+<form class="curve_form" action="" method="get" name="form1">
     <dl>
     <hr>
     データ入力
@@ -103,6 +103,13 @@ form dl dd {
 </script>
 
 
+  <script language="javascript" type="text/javascript">
+    const func1 = (page) => {
+      document.form1.action = `${page}.html`;
+      document.form1.submit();
+    };  
+  
+  
 
 <img src="https://luvsci.github.io/earth-curve/curve-calculation.png">
 
