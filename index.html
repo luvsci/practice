@@ -7,17 +7,14 @@
 
 <h1>FormのGetの練習 </h1>
 
-  <form name="form1" action="" method="get">
-<input type="text" name="input1">
+<form>
+<input type="text">
 <input type="button" id="test1" value="実行">
 </form>
-<p id="test2">表示領域</p>
 
 <script>
 function func1() {
-  let y = document.form1.input1.value;
-  const z = document.querySelector("#test2");
-  z.textContent = y;
+  let y = document.forms[0].elements[0].value;
 }
 const x = document.querySelector("#test1");
 x.addEventListener("click",func1);
