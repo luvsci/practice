@@ -1,4 +1,4 @@
-<html><body><head><title>地球の曲率計算機</title></head>052
+<html><body><head><title>地球の曲率計算機</title></head>053
 <form>
 観察者の高さ： <input type="text"  id="eyeheight" name="eyeheight" value="1"> m <br>
 対象物までの距離： <input type="text"  id="distanceF" name="distanceF" value="10"> km <br>
@@ -10,9 +10,9 @@
 </form> 
 
 <script>    function calc(eyeheight, distanceF, radius)　{
-            let eyeheight = document.getElementById('eyeheight').value = eyeheight
-            let distanceF = document.getElementById('distanceF').value = distanceF
-            let radius = document.getElementById('radius').value = radius
+            eyeheight = document.getElementById('eyeheight').value = eyeheight
+            distanceF = document.getElementById('distanceF').value = distanceF
+            radius = document.getElementById('radius').value = radius
             let horizonD = document.getElementById('horizonD').value = Math.sqrt(eyeheight * eyeheight + 2 * (radius*1000) * eyeheight)/1000 ;
             let horizonE = document.getElementById('horizonE').value = (distanceF - horizonD);
             let hiddenX = document.getElementById('hiddenX').value = Math.sqrt(horizonE*1000 * horizonE*1000 + (radius*1000)*(radius*1000)) - (radius*1000) ;
