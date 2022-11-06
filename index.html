@@ -6,26 +6,36 @@
  
     </head>
     <body>
-        <form id="form1" action="#">
-            名前：
-            <input type="text" id="input_name" value=""> <br>
-            年齢：
-            <input type="text" id="input_age" value=""><br>
+<form name = "form">
+<input type="text" name="txtb" id="textid">
+<input type="button" value="決定！" onclick="tbox1()">
+</form>
  
-            <input type="button" onclick="func1()" value="送信">
-        </form>
- 
-        <!-- scriptタグで囲まれた部分はJavaScriptで記述 -->
-        <script type="text/javascript">
-          function func1(){
-              var input_name = document.getElementById("input_name").value; //入力された名前
-              var input_age = document.getElementById("input_age").value; //入力された年齢
-              var address = "https://luvsci.github.io/practice/output.html"; //htmlファイルのアドレス
-              var query = "?name=" + input_name +"&age=" + input_age; //クエリ文字列
-              var url = address + query; //URL
-               
-              location.href = url; //現在のタブで結果表示
-          }
-        </script>
+
+    <!-- テーブル実装 -->
+    <table class = "Table">
+      <tbody>
+        <tr>
+            <th scope="row">項目名</th>
+            <td> <div id="textoutput"></div> </td>
+        </tr>
+    </tbody>
+        </table>
+        
+ //textboxの文字を取得する
+function tbox1(){
+
+str1 = document.form.txtb.value;
+
+console.log(str1);
+
+
+var x = document.getElementById('textid').value;
+  numx = parseInt(x);
+  numx = numx + 1;
+  document.getElementById('textoutput').innerHTML = x;
+
+};       
+        
     </body>
 </html>
