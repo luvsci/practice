@@ -1,16 +1,17 @@
 <html>
 <body>
-1
+2
   <!-- フォーム送信時にcheckText関数を実行する -->
   <form name="myform" onsubmit='checkText()'>
-      <input name="A" type="number" value='1'/>
-      <input name="B" type="number" value=30/>
+      <input id=a name="A" type="number" value='1'/>
+      <input id=a name="B" type="number" value='30'/>
       <input type="submit" value="送信" />
   </form>
  
   <script>
       function checkText() {
- 
+      let A = document.getElementById('a').value = A 
+      let B = document.getElementById('b').value = B
           //入力ボックスの内容を表示する
          console.log( document.myform.A.value );
          console.log( document.myform.A.value );
