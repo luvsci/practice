@@ -1,39 +1,19 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8"/>
-        <title>Input</title>
- 
-    </head>
-    <body>
-<form name = "form">
-<input type="text" name="txtb" id="textid">
-<input type="button" value="決定！" onclick="tbox1()">
-</form>
- 
+<html><body><head><title>地球の曲率計算機</title></head>050
+<form>
+観察者の高さ： <input type="number" name="eyeheight" value=""> m <br>
+対象物までの距離： <input type="number" name="distanceF" value=""> km <br>
+地球の半径：<input type="number" name="radius" value="6371"> km <br>
+<input type="submit" onclick="calc(eyeheight.value, distanceF.value, radius.value)" value="計算"> <br><br>
+観察者～水平線までの距離：<input id="horizonD" type="text" value=""> km <br>
+水平線～対象物までの距離：<input id="horizonE" type="text" value=""> km <br>  
+沈み込み：<input id="hiddenX" type="text" value=""> m <br>
+</form> 
 
-    <!-- テーブル実装 -->
-    <table class = "Table">
-      <tbody>
-        <tr>
-            <th scope="row">項目名</th>
-            <td> <div id="textoutput"></div> </td>
-        </tr>
-    </tbody>
-        </table>
-        
- //textboxの文字を取得する
-<script>
-function tbox1(){
-str1 = document.form.txtb.value;
-console.log(str1);
-
-var x = document.getElementById('textid').value;
-  numx = parseInt(x);
-  numx = numx + 1;
-  document.getElementById('textoutput').innerHTML = x;
-};
-</script>    
-    
-    </body>
-</html>
+<script>    function calc(eyeheight, distanceF, radius, paramstr)　{
+            let horizonD = document.getElementById('horizonD').value = Math.sqrt(eyeheight * eyeheight + 2 * (radius*1000) * eyeheight)/1000 ;
+            let horizonE = document.getElementById('horizonE').value = (distanceF - horizonD);
+            let hiddenX = document.getElementById('hiddenX').value = Math.sqrt(horizonE*1000 * horizonE*1000 + (radius*1000)*(radius*1000)) - (radius*1000) ;
+            let distanceF = document.getElementById('distanceF').value = (distanceF - horizonD)
+            console.log(distanceF); console.log(radius); console.log(horizonE); console.log(horizonD); console.log(hiddenX)  ; } 
+</script>
+</body></html>
