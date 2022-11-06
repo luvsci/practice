@@ -1,14 +1,39 @@
 <html><body><head><title>フォーム入力値をスクリプトで計算してさらにフォームに反映する</title></head>056
 
-<form type="get" action="">
-数値： <input type="text" name="number1" value="1"> m <br>
-<input type="submit" onclick="calc(number1.value)" value="計算"> <br><br>
-数値に１を足す：<input type="text" name="addedNumber" value=""> km <br>
-</form> 
+<form name="frm1" action="" class="exp01">
+<input size="4" type="text" name="num1">　
+<select name="cal0">
+<option value="+">＋</option>
+<option value="-">−</option>
+<option value="*">＊</option>
+<option value="/">／</option>
+</select>　
+<input size="4" type="text" name="num2">　
+<strong>＝</strong>　
+<input size="5" type="text" name="num3" readonly>　
+<input type="button" value="計算" onclick="calc_sum();">　
+<input type="button" value="クリア" onclick="return reset_exe();">
+</form>
+  
 
-<script>    function calc(number1)　{
-let addedNumbers = number1;
-addedNumber = addedNumber + 1;} 
-</script>
+function calc_sum(){
+  num1 = document.frm1['num1'].value
+  num2 = document.frm1['num2'].value
+  cal0 = document.frm1['cal0'].value;
+  if (cal0 == "+") sum1 = eval(num1) + eval(num2);
+  if (cal0 == "-") sum1 = eval(num1) - eval(num2);
+  if (cal0 == "*") sum1 = eval(num1) * eval(num2);
+  if (cal0 == "/") sum1 = eval(num1) / eval(num2);
+  document.frm1['num3'].value = sum1;
+  return false;
+}
+function reset_exe(){
+  sum1 = "";
+  if (confirm('リセットします。')){
+    document.frm1['num1'].value = "";
+    document.frm1['num2'].value = "";
+    document.frm1['num3'].value = sum1;
+  }
+}
 
 </body></html>
