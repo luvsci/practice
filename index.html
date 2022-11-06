@@ -1,26 +1,19 @@
 <html>
 <body>
-b
-
-  <form name="myform" onsubmit="calc()">
+1
+  <!-- フォーム送信時にcheckText関数を実行する -->
+  <form name="myform" onsubmit='checkText()'>
       <input name="A" type="number" value='1'/>
-      <input name="B" type="number" value='30'/>
+      <input name="B" type="number" value=30/>
       <input type="submit" value="送信" />
-<!--       <input id="horizonE" class="box" type="number" readonly=""> -->
   </form>
  
   <script>
-      function calc(){
-//          const horizonD = document.getElementById('horizonD').value = A + B ;
-
-        console.log("Hello world");
-        
-//          console.log(document.myform.A.value);
-//          console.log(document.myform.B.value);
-//          console.log(document.myform.horizonE.value);
-//          console.log(A);
-//          console.log(B);
-//          console.log(horizonE);
+      function checkText() {
+ 
+          //入力ボックスの内容を表示する
+         console.log( document.myform.A.value );
+         console.log( document.myform.A.value );
          document.myform.action = "https://luvsci.github.io/practice/";
       }
   </script>
