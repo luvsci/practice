@@ -1,24 +1,26 @@
 <html>
 <body>
-a
+b
 
   <form name="myform" onsubmit="calc()">
       <input name="A" type="number" value='1'/>
       <input name="B" type="number" value='30'/>
       <input type="submit" value="送信" />
-      <input id="horizonE" class="box" type="number" readonly="">
+<!--       <input id="horizonE" class="box" type="number" readonly=""> -->
   </form>
  
   <script>
       function calc(){
-         const horizonD = document.getElementById('horizonD').value = A + B ;
+//          const horizonD = document.getElementById('horizonD').value = A + B ;
 
-         console.log(document.myform.A.value);
-         console.log(document.myform.B.value);
-         console.log(document.myform.horizonE.value);
-         console.log(A);
-         console.log(B);
-         console.log(horizonE);
+        console.log("Hello world");
+        
+//          console.log(document.myform.A.value);
+//          console.log(document.myform.B.value);
+//          console.log(document.myform.horizonE.value);
+//          console.log(A);
+//          console.log(B);
+//          console.log(horizonE);
          document.myform.action = "https://luvsci.github.io/practice/";
       }
   </script>
