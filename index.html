@@ -1,23 +1,23 @@
 <html>
 <body>
-5
-  <!-- フォーム送信時にcheckText関数を実行する -->
-  <form name="myform" onsubmit='checkText()'>
-      <input id='a' name="A" type="number" value='1'/>
-      <input id='b' name="B" type="number" value='30'/>
-      <input type="submit" value="送信" />
-  </form>
+6
+
+<body>
+<form name="myform">
+    <input name="mytext" type="text" />
+    
+    <!-- name属性を付与する -->
+    <button name="btn">送信</button>
+</form>
  
-  <script>
-      function checkText() {
-//       let A = document.getElementById('a').value
-//       let B = document.getElementById('b').value
-          //入力ボックスの内容を表示する
-         console.log( document.myform.A.value );
-         console.log( document.myform.A.value );
-         document.myform.action = "https://luvsci.github.io/practice/";
-      }
-  </script>
+ 
+<script>
+document.myform.btn.addEventListener('click', function() {
+ 
+    document.myform.submit();
+
+         console.log("test");
   
+});
+</script>
 </body>
-</html>
