@@ -1,10 +1,10 @@
 <html>
 <body>
-2
+3
   <!-- フォーム送信時にcheckText関数を実行する -->
   <form name="myform" onsubmit="checkText()">
-      <input name="mytext" type="text" />
-      <input name="mytext2" type="text" />
+      <input name="A" type="number" value=1/>
+      <input name="B" type="number" value=30/>
       <input type="submit" value="送信" />
   </form>
  
@@ -12,7 +12,8 @@
       function checkText() {
  
           //入力ボックスの内容を表示する
-          alert( document.myform.mytext.value );
+         console.log( document.myform.A.value );
+         console.log( document.myform.A.value );
          document.myform.action = "https://luvsci.github.io/practice/";
       }
   </script>
